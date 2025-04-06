@@ -1,0 +1,101 @@
+<div class="container" style="padding: 2rem 1rem; font-family: sans-serif;">
+    <div class="row">
+        <div class="col-md-12">
+            <h2 style="color: #a08b6e; text-transform: uppercase; font-size: 2rem; font-weight: 700; position: relative;text-align: center;">
+                <span style="border-bottom: 3px double #711e2d;">Gallery</span>
+              </h2>
+        </div>
+    </div>
+   <!-- Carousel -->
+<ngb-carousel [interval]="3000" [wrap]="true" [pauseOnHover]="true">
+    <ng-template ngbSlide *ngFor="let group of groupedImages">
+      <div class="d-flex justify-content-center gap-3">
+        <div *ngFor="let image of group" class="col-md-4">
+          <img
+            [src]="image.thumbnail"
+            [alt]="image.alt"
+            class="img-fluid rounded shadow-sm"
+            style="cursor: pointer; height: 300px; object-fit: cover;"
+            (click)="openLightbox(image.full)"
+          />
+        </div>
+      </div>
+    </ng-template>
+  </ngb-carousel>
+  
+  <!-- Lightbox Modal -->
+  <ng-template #lightbox let-modal>
+    <div class="modal-body text-center p-0 modal-zoom">
+      <img [src]="currentImage" alt="Full Image" class="img-fluid w-100" />
+    </div>
+  </ng-template>
+  
+</div>
+
+
+<div class="container" style="padding: 2rem;">
+    <div class="row">
+        <div class="col-md-12">
+            <h2 style="color: #a08b6e; text-transform: uppercase; font-size: 2rem; font-weight: 700; position: relative;text-align: center;">
+                <span style="border-bottom: 3px double #711e2d;">Download</span>
+              </h2>
+        </div>
+        <div style="max-width: 1200px; margin: auto; display: flex; flex-wrap: wrap; justify-content: center; gap: 2rem;">
+
+            <!-- Single Card -->
+            <div style="border: 1px solid #711e2d; text-align: center; padding: 2rem; width: 300px; position: relative;">
+                <mat-icon style="color: #711e2d;font-size: xx-large;">article</mat-icon>
+              <h3 style="margin-bottom: 1rem;">Brochure</h3>
+              <a (click)="open('Download Brochure')" href="#" style="background-color: #711e2d; color: white; text-decoration: none; padding: 0.7rem 2rem; display: inline-block; font-weight: 600;">
+                DOWNLOAD
+              </a>
+              
+            </div>
+        
+            <!-- Floor Plan Card -->
+            <div style="border: 1px solid #711e2d; text-align: center; padding: 2rem; width: 300px; position: relative;">
+                <mat-icon style="color: #711e2d;font-size: xx-large;">apartment</mat-icon>
+              <h3 style="margin-bottom: 1rem;">Floor Plan</h3>
+              <a (click)="open('Download Floor Plan')" href="#" style="background-color: #711e2d; color: white; text-decoration: none; padding: 0.7rem 2rem; display: inline-block; font-weight: 600;">
+                DOWNLOAD
+              </a>
+            </div>
+        
+            <!-- Site Plan Card -->
+            <div style="border: 1px solid #711e2d; text-align: center; padding: 2rem; width: 300px; position: relative;">
+                <mat-icon style="color: #711e2d;font-size: xx-large;">yard</mat-icon>
+              <h3 style="margin-bottom: 1rem;">Site Plan</h3>
+              <a (click)="open('Download Site Plan')" href="#" style="background-color: #711e2d; color: white; text-decoration: none; padding: 0.7rem 2rem; display: inline-block; font-weight: 600;">
+                DOWNLOAD
+              </a>
+            </div>
+        
+          </div>
+</div>
+</div>
+
+<div class="container" style="padding: 2rem;">
+    <div class="row">
+        <div class="col-md-12">
+            <h2 style="color: #a08b6e; text-transform: uppercase; font-size: 2rem; font-weight: 700; position: relative;text-align: center;">
+                <span style="border-bottom: 3px double #711e2d;">Amenities</span>
+              </h2>
+        </div>
+    </div>
+    <ngb-carousel [interval]="3000" [showNavigationArrows]="true" [showNavigationIndicators]="true">
+        <ng-template ngbSlide *ngFor="let group of groupedAmenities">
+          <div class="row">
+            <div class="col-md-4" *ngFor="let item of group">
+              <div class="card h-100 shadow-sm amenity-card fade-in">
+                <img [src]="item.image" class="card-img-top" [alt]="item.title" />
+                <div class="card-body">
+                  <h5 class="card-title"><strong>{{ item.title }}</strong></h5>
+                  <p class="card-text">{{ item.description }}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </ng-template>
+      </ngb-carousel>
+      
+</div>

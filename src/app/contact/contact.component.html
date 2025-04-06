@@ -1,0 +1,38 @@
+<div class="container">
+    <div class="row justify-content-center">
+      <div class="col-md-6 contact-form-box p-5">
+        <h4 class="text-white mb-4 text-center fw-bold">CONTACT US</h4>
+
+        <form (ngSubmit)="submitContactForm()" #contactForm="ngForm">
+          <!-- Name -->
+          <div class="mb-4">
+            <input
+              type="text"
+              name="name"
+              class="form-control input-custom"
+              placeholder="Name*"
+              required
+              ngModel
+            />
+          </div>
+
+          <!-- Mobile -->
+          <div class="mb-4">
+            <input
+              type="tel"
+              name="mobile"
+              class="form-control input-custom"
+              placeholder="Mobile Number*"
+              required
+              ngModel
+            />
+          </div>
+
+          <!-- Submit Button -->
+          <button type="submit" class="btn btn-light w-100 fw-semibold">
+            SEND MESSAGE
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>

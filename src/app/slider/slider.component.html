@@ -1,0 +1,45 @@
+<ngb-carousel [showNavigationArrows]="showNavigationArrows" [showNavigationIndicators]="showNavigationIndicators">
+    <ng-template ngbSlide>
+      <div class="carousel-item-wrapper">
+        <figure [style.height]="ismobile ? '85vh' : '60vh'">
+          <video #carouselVideo [autoplay]="true" [muted]="true" loop playsinline class="carousel-video">
+            <source [src]="ismobile ? '../video/mobile.mp4' : '../video/web.mp4'" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+        </figure>
+  
+        <!-- Black Overlay -->
+        <div class="overlay"></div>
+  
+        <!-- Content -->
+        <div class="carousel-content" [style.display]="ismobile ? 'none' : 'absolute'">
+          <div class="property-card">
+            <div class="card-content">
+              <h2>MSN ONE NEOPOLIS</h2>
+              <p class="location">
+                <mat-icon>map</mat-icon>Kokapet, Hyderabad
+              </p>
+              <p class="rera">RERA Registration No: <span>Coming Soon</span></p>
+  
+              <hr />
+  
+              <div class="details">
+                <div class="bhk">
+                  <h3>4 BHK</h3>
+                  <p>Luxury Apartments</p>
+                </div>
+                <div class="price">
+                  <h3>₹ 6.60 Cr*</h3>
+                  <p>Onwards*</p>
+                </div>
+              </div>
+  
+              <button class="cta-btn" (click)="open('Get Price Breakdown')">Get Price Breakdown</button>
+            </div>
+            <div class="vector-bg"></div>
+          </div>
+        </div>
+      </div>
+    </ng-template>
+  </ngb-carousel>
+  

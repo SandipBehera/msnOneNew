@@ -1,0 +1,33 @@
+<nav class="navbar">
+    <div class="navbar-left">
+      <img src="../img/logo.png" alt="Logo" class="logo" />
+    </div>
+  
+    <div class="navbar-right">
+      <ul class="nav-links">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Features</a></li>
+        <li><a href="#">Pricing</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+  
+      <div class="hamburger" (click)="toggleSidebar()">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </nav>
+  
+  <!-- Sidebar -->
+  <div class="sidebar" [class.open]="sidebarOpen">
+    <button class="close-btn" (click)="closeSidebar()">×</button>
+    <a href="#" (click)="closeSidebar()">Home</a>
+    <a href="#" (click)="closeSidebar()">Features</a>
+    <a href="#" (click)="closeSidebar()">Pricing</a>
+    <a href="#" (click)="closeSidebar()">Contact</a>
+  </div>
+  
+  <!-- Overlay for mobile -->
+  <div class="overlay" *ngIf="sidebarOpen" (click)="closeSidebar()"></div>
+  

@@ -1,0 +1,39 @@
+<div class="floorplan-modal">
+<div class="modal-header">
+    <h5 class="modal-title text-white fw-bold">{{title}}</h5>
+    <button type="button" class="btn-close" style="color: white;" aria-label="Close" (click)="activeModal.dismiss()"></button>
+  </div>
+  
+  <div class="modal-body p-4">
+    <form (ngSubmit)="submitFloorPlanForm()" #floorForm="ngForm">
+      <!-- Name -->
+      <div class="mb-3">
+        <input
+          type="text"
+          name="name"
+          class="form-control input-custom"
+          placeholder="Name*"
+          required
+          ngModel
+        />
+      </div>
+  
+      <!-- Mobile Number -->
+      <div class="mb-3">
+        <input
+          type="tel"
+          name="mobile"
+          class="form-control input-custom"
+          placeholder="Mobile number*"
+          required
+          ngModel
+        />
+      </div>
+  
+      <!-- Submit Button -->
+      <button type="submit" class="btn btn-light w-100 fw-semibold">
+        I'M INTERESTED
+      </button>
+    </form>
+  </div>
+</div>
