@@ -45,6 +45,7 @@
     overflow: hidden;
     padding: 60px;
     position: relative;
+    font-family: "Playfair Display,Georgia,serif";
   }
   
   .card-content {
@@ -56,6 +57,7 @@
     font-size: 1.5rem;
     font-weight: bold;
     margin-bottom: 5px;
+    font-family: "Playfair Display,Georgia,serif";
   }
   
   .location {
