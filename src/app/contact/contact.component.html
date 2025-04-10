@@ -3,33 +3,57 @@
       <div class="col-md-6 contact-form-box p-5">
         <h4 class="text-white mb-4 text-center fw-bold">CONTACT US</h4>
 
-        <form (ngSubmit)="submitContactForm()" #contactForm="ngForm">
+        <form [formGroup]="myForm" (ngSubmit)="submitContactForm()" >
           <!-- Name -->
           <div class="mb-4">
             <input
               type="text"
               name="name"
+              id="name"
               class="form-control input-custom"
               placeholder="Name*"
               required
-              ngModel
+              formControlName="name"
+              
             />
+            <small *ngIf="myForm.controls['name'].invalid && myForm.controls['name'].touched" class="error">
+              Name is required (min 3 characters)
+            </small>
+          </div>
+
+          <div class="mb-4">
+            <input
+              type="text"
+              name="email"
+              id="email"
+              class="form-control input-custom"
+              placeholder="Email*"
+              required
+              formControlName="email"
+            />
+            <small *ngIf="myForm.controls['email'].invalid && myForm.controls['email'].touched" class="error">
+              Enter a valid email address
+            </small>
           </div>
 
           <!-- Mobile -->
           <div class="mb-4">
             <input
               type="tel"
-              name="mobile"
+              name="phone"
+              id="phone"
               class="form-control input-custom"
               placeholder="Mobile Number*"
               required
-              ngModel
+              formControlName="phone"
             />
+            <small *ngIf="myForm.controls['phone'].invalid && myForm.controls['phone'].touched" class="error">
+              Enter a valid 10-digit phone number
+            </small>
           </div>
 
           <!-- Submit Button -->
-          <button type="submit" class="btn btn-light w-100 fw-semibold">
+          <button type="submit" class="btn btn-light w-100 fw-semibold"  [disabled]="myForm.invalid || loading">
             SEND MESSAGE
           </button>
         </form>

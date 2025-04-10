@@ -5,10 +5,11 @@
   
     <div class="navbar-right">
       <ul class="nav-links">
-        <li><a href="#">Home</a></li>
-        <li><a href="#">Features</a></li>
-        <li><a href="#">Pricing</a></li>
-        <li><a href="#">Contact</a></li>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#feature">Features</a></li>
+        <li><a href="#pricing">Pricing</a></li>
+        <li><a href="#location">Location</a></li>
+        <li><a href="#contact">Contact</a></li>
       </ul>
   
       <div class="hamburger" (click)="toggleSidebar()">
@@ -22,10 +23,11 @@
   <!-- Sidebar -->
   <div class="sidebar" [class.open]="sidebarOpen">
     <button class="close-btn" (click)="closeSidebar()">×</button>
-    <a href="#" (click)="closeSidebar()">Home</a>
-    <a href="#" (click)="closeSidebar()">Features</a>
-    <a href="#" (click)="closeSidebar()">Pricing</a>
-    <a href="#" (click)="closeSidebar()">Contact</a>
+    <a href="#home" (click)="closeSidebar()">Home</a>
+    <a href="#feature" (click)="closeSidebar()">Features</a>
+    <a href="#pricing" (click)="closeSidebar()">Pricing</a>
+    <a href="#location" (click)="closeSidebar()">Location</a>
+    <a href="#contact" (click)="closeSidebar()">Contact</a>
   </div>
   
   <!-- Overlay for mobile -->

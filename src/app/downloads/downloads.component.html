@@ -10,7 +10,7 @@
 <ngb-carousel [interval]="3000" [wrap]="true" [pauseOnHover]="true">
     <ng-template ngbSlide *ngFor="let group of groupedImages">
       <div class="d-flex justify-content-center gap-3">
-        <div *ngFor="let image of group" class="col-md-4">
+        <div *ngFor="let image of group" class="col-12 col-md-12 col-lg-4">
           <img
             [src]="image.thumbnail"
             [alt]="image.alt"
@@ -40,10 +40,10 @@
                 <span style="border-bottom: 3px double #711e2d;">Download</span>
               </h2>
         </div>
-        <div style="max-width: 1200px; margin: auto; display: flex; flex-wrap: wrap; justify-content: center; gap: 2rem;">
+        <div style="max-width: 1200px; margin: auto; display: flex; flex-wrap: wrap; justify-content: center; gap: 2rem; ">
 
             <!-- Single Card -->
-            <div style="border: 1px solid #711e2d; text-align: center; padding: 2rem; width: 300px; position: relative;">
+            <div style="border: 1px solid #711e2d; text-align: center; padding: 2rem; width: 300px; position: relative; box-shadow: 1px 2px;border-radius: 10px;">
                 <mat-icon style="color: #711e2d;font-size: xx-large;">article</mat-icon>
               <h3 style="margin-bottom: 1rem;">Brochure</h3>
               <a (click)="open('Download Brochure')" href="#" style="background-color: #711e2d; color: white; text-decoration: none; padding: 0.7rem 2rem; display: inline-block; font-weight: 600;">
@@ -53,7 +53,7 @@
             </div>
         
             <!-- Floor Plan Card -->
-            <div style="border: 1px solid #711e2d; text-align: center; padding: 2rem; width: 300px; position: relative;">
+            <div style="border: 1px solid #711e2d;border-radius: 10px; text-align: center; padding: 2rem; width: 300px; position: relative;box-shadow: 1px 2px;">
                 <mat-icon style="color: #711e2d;font-size: xx-large;">apartment</mat-icon>
               <h3 style="margin-bottom: 1rem;">Floor Plan</h3>
               <a (click)="open('Download Floor Plan')" href="#" style="background-color: #711e2d; color: white; text-decoration: none; padding: 0.7rem 2rem; display: inline-block; font-weight: 600;">
@@ -62,7 +62,7 @@
             </div>
         
             <!-- Site Plan Card -->
-            <div style="border: 1px solid #711e2d; text-align: center; padding: 2rem; width: 300px; position: relative;">
+            <div style="border: 1px solid #711e2d; text-align: center; padding: 2rem; width: 300px; position: relative;box-shadow: 1px 2px;border-radius: 10px;">
                 <mat-icon style="color: #711e2d;font-size: xx-large;">yard</mat-icon>
               <h3 style="margin-bottom: 1rem;">Site Plan</h3>
               <a (click)="open('Download Site Plan')" href="#" style="background-color: #711e2d; color: white; text-decoration: none; padding: 0.7rem 2rem; display: inline-block; font-weight: 600;">
@@ -85,13 +85,13 @@
     <ngb-carousel [interval]="3000" [showNavigationArrows]="true" [showNavigationIndicators]="true">
         <ng-template ngbSlide *ngFor="let group of groupedAmenities">
           <div class="row">
-            <div class="col-md-4" *ngFor="let item of group">
+            <div class="co-12 col-md-12 col-lg-4" *ngFor="let item of group">
               <div class="card h-100 shadow-sm amenity-card fade-in">
-                <img [src]="item.image" class="card-img-top" [alt]="item.title" />
-                <div class="card-body">
-                  <h5 class="card-title"><strong>{{ item.title }}</strong></h5>
-                  <p class="card-text">{{ item.description }}</p>
-                </div>
+              <img [src]="item.image" class="card-img-top" [alt]="item.title" />
+              <div class="card-body">
+                <h5 class="card-title"><strong>{{ item.title }}</strong></h5>
+                <p class="card-text">{{ item.description }}</p>
+              </div>
               </div>
             </div>
           </div>

@@ -3,8 +3,8 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #70092c;
-    color: white;
+    background-color: #fff;
+    color: #000;
     padding: 0px 20px;
     position: relative;
     z-index: 100;
@@ -22,7 +22,7 @@
   }
   
   .nav-links li a {
-    color: white;
+    color: #000;
     text-decoration: none;
     font-weight: 500;
   }
@@ -96,6 +96,7 @@
   
     .hamburger {
       display: flex;
+      background: #000;
     }
   }
   
