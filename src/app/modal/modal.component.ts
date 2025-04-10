@@ -17,19 +17,14 @@ export class ModalComponent {
   loading = false;
   @Input() user:User={name:'',email:'',phone:'', projectName:'MSN One'};
   constructor(public activeModal: NgbActiveModal,private formbuilder:UntypedFormBuilder,private ServiceService: SavecontactService) {
-    this.Createform();
-  }
-  Createform(){
     this.myForm=this.formbuilder.group({
-      name:['',Validators.required],
-      email:['', Validators.compose([
-        Validators.required,
-        Validators.pattern('^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$')
-      ])],
-      phone:['',[Validators.required,Validators.pattern('^((\\+91-?)|0)?[0-9]{10}$')]],
-      url:'MSN One'
+      name: ['', [Validators.required]],
+      email: ['', [Validators.required, Validators.email]],
+      phone: ['', [Validators.required, Validators.pattern(/^\d{10}$/)]],
+      projectName: ['MSN One' ]
     })
-   }
+  }
+  
   submitFloorPlanForm() {
     // handle contact form logic
     if (this.myForm.valid) {
