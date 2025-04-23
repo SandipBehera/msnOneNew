@@ -3,6 +3,7 @@ import { AfterViewInit, Component, ElementRef, Inject, PLATFORM_ID, QueryList,  
 import { NgbCarouselConfig, NgbCarouselModule, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { MatIconModule } from '@angular/material/icon';
 import { ModalComponent } from '../modal/modal.component';
+import { VisitorTrackerService } from '../visitor-tracker.service';
 @Component({
   selector: 'app-slider',
   standalone: true,
@@ -18,13 +19,17 @@ export class SliderComponent implements AfterViewInit {
   ismobile = false;
   @ViewChildren('carouselVideo') videos!: QueryList<ElementRef<HTMLVideoElement>>;
 
-  constructor(@Inject(PLATFORM_ID) private platformId: Object, private modalService: NgbModal) {
+  constructor(@Inject(PLATFORM_ID) private platformId: Object, private modalService: NgbModal, private VisitorTrackerService:VisitorTrackerService) {
     
   }
   ngOnInit() {
     if (isPlatformBrowser(this.platformId)) {
       this.ismobile = window.innerWidth <= 768;
     }
+    this.VisitorTrackerService.logVisitor('One By MSN').subscribe({
+      next: (res) => console.log('Visitor logged', res),
+      error: (err) => console.error('Error logging visitor:', err)
+    });
     
   }
   
